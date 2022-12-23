@@ -1,0 +1,185 @@
+# cook your dish here
+class hotelmanage:
+
+    def __init__(self,rt='',s=0,p=0,r=0,t=0,a=143,name='',address='',cindate='',coutdate='',rno=1):
+        
+        print("--------------------------------------------------")
+        print ("\t***WELCOME TO YOYO***")
+        print("--------------------------------------------------")
+
+        self.rt=rt
+
+        self.r=r
+
+        self.t=t
+
+        self.p=p
+
+        self.s=s
+        self.a=a
+        self.name=name
+        self.address=address
+        self.cindate=cindate
+        self.coutdate=coutdate
+        self.rno=rno
+    def inputdata(self):
+        self.name=input("\nEnter your name:")
+        self.address=input("\nEnter your address:")
+        self.cindate=input("\nEnter your check in date:")
+        self.coutdate=input("\nEnter your checkout date:")
+        print("Your room no.:",self.rno,"\n")
+        
+    def roomrent(self):#sel1353
+
+        print ("The room types are:-")
+
+        print ("1.  Royal suite---->4000")
+
+        print ("2.  Super Deluxe---->3000")
+
+        print ("3.  Double Type---->2000")
+
+        print ("4.  Single Type---->1000")
+
+        x=int(input("Enter the number of your choice->"))
+
+        n=int(input("Enter number of stay in the Hotel:"))
+
+        if(x==1):
+
+            print ("you have chosen Royal suite")
+
+            self.s=4000*n
+
+        elif (x==2):
+
+            print ("you have chosen Super Deluxe")
+
+            self.s=3000*n
+
+        elif (x==3):
+
+            print ("you have chosen Double Type")
+
+            self.s=2000*n
+
+        elif (x==4):
+            print ("you have chosen Single Type")
+
+            self.s=1000*n
+
+        else:
+
+            print ("please choose a room")
+
+        print ("The room rent is: ",self.s,"\n")
+
+    def foodpurchased(self):
+
+        print("*****RESTAURANT MENU*****")
+
+        print("1.Breakfast-------60\-\n""2.Lunch-------140\-\n""3.Dinner-------200\-\n""4.Drinks-------30\-\n","5.Deserts-------110\-\n","6.Exit")
+
+
+        while (1):
+
+            c=int(input("Enter the number of your choice:"))
+
+
+            if (c==1):
+                d=int(input("Enter the quantity:"))
+                self.r=self.r+60*d
+
+            elif (c==2):
+                 d=int(input("Enter the quantity:"))
+                 self.r=self.r+140*d
+
+            elif (c==3):
+                 d=int(input("Enter the quantity:"))
+                 self.r=self.r+200*d
+
+            elif (c==4):
+                 d=int(input("Enter the quantity:"))
+                 self.r=self.r+30*d
+
+            elif (c==5):
+                 d=int(input("Enter the quantity:"))
+                 self.r=self.r+110*d
+
+            elif (c==6):
+                break;
+            else:
+                print("You've Enter an Invalid Key")
+
+        print ("Total food Cost=Rs",self.r,"\n")
+
+
+
+    def display(self):
+        print("----------------------------------")
+        print ("******HOTEL BILL******")
+        print("----------------------------------")
+        print("|Customer details:")
+        print("|Customer name:",self.name)
+        print("|Customer address:",self.address)
+        print("|Check in date:",self.cindate)
+        print("|Check out date",self.coutdate)
+        print("|Room no.",self.rno)
+        print("|Hotel Room rent: ",self.s)
+        print("|Restaurant bill: ",self.r)
+
+        self.rt=self.s+self.t+self.p+self.r
+
+        print("|Your sub total Purchased is:",self.rt)
+        print("|Service Charges: ",self.a)
+        print("---------------------------")
+        print("Total Bill: ",self.rt+self.a,"")
+        print("---------------------------")
+        self.rno+=3
+
+            
+
+        
+
+        
+
+def main():
+
+    a=hotelmanage()
+    
+
+    while (1):
+        print("1.Enter Customer Details")
+        
+        print("2.Select Room type")
+
+        print("3.Restaurant menu")
+
+        print("4.Total Bill")
+
+        print("5.EXIT")
+
+        b=int(input("\nEnter your choice:"))
+        if (b==1):
+            a.inputdata()
+
+        if (b==2):
+
+            a.roomrent()
+
+        if (b==3):
+
+            a.foodpurchased()
+
+        if (b==4):
+
+            a.display()
+
+        if (b==5):
+
+            quit()
+
+
+
+main()
+
